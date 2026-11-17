@@ -1,0 +1,14 @@
+wq2server:
+  port: 8080
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: product
+              uri: http://localhost:8900
+              predicates:
+                - Path=/product,/product/**
